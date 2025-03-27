@@ -103,21 +103,24 @@ export default function App() {
 */
   console.log(currentData);
   return (
-    <div className={`wrapper`} style={currentData?.image?.wrapperStyles || ""}>
+    <div
+      className="wrapper"
+      style={currentData ? currentData.image.wrapperStyles : {}}
+    >
       {currentData && (
         <div
-          className={`quote-container`}
+          className="quote-container"
           style={currentData.image.containerStyles}
         >
           <p
-            className={`quote `}
+            className="quote"
             style={getSmallestFontSize(
               currentData.image.quoteFontSize,
               currentData.text.quoteFontSize
             )}
           >
             {currentData.text.fakeQuote}
-            <span className={`source`}>-{currentData.text.fakeSource}</span>
+            <span className="source">-{currentData.text.fakeSource}</span>
           </p>
         </div>
       )}
